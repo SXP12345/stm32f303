@@ -1,0 +1,27 @@
+--cpu=Cortex-M4.fp.sp
+"key_cube\startup_stm32f303xc.o"
+"key_cube\main.o"
+"key_cube\stm32f3xx_it.o"
+"key_cube\stm32f3xx_hal_msp.o"
+"key_cube\led_bsp.o"
+"key_cube\key_bsp.o"
+"key_cube\stm32f3xx_hal_tim.o"
+"key_cube\stm32f3xx_hal_tim_ex.o"
+"key_cube\stm32f3xx_hal.o"
+"key_cube\stm32f3xx_hal_rcc.o"
+"key_cube\stm32f3xx_hal_rcc_ex.o"
+"key_cube\stm32f3xx_hal_gpio.o"
+"key_cube\stm32f3xx_hal_dma.o"
+"key_cube\stm32f3xx_hal_cortex.o"
+"key_cube\stm32f3xx_hal_pwr.o"
+"key_cube\stm32f3xx_hal_pwr_ex.o"
+"key_cube\stm32f3xx_hal_flash.o"
+"key_cube\stm32f3xx_hal_flash_ex.o"
+"key_cube\stm32f3xx_hal_i2c.o"
+"key_cube\stm32f3xx_hal_i2c_ex.o"
+"key_cube\stm32f3xx_hal_exti.o"
+"key_cube\system_stm32f3xx.o"
+--strict --scatter "KEY_CUBE\KEY_CUBE.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "KEY_CUBE.map" -o KEY_CUBE\KEY_CUBE.axf

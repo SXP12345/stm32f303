@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"exti_cube\startup_stm32f303xc.o"
+"exti_cube\main.o"
+"exti_cube\stm32f3xx_it.o"
+"exti_cube\stm32f3xx_hal_msp.o"
+"exti_cube\key_bsp.o"
+"exti_cube\led_bsp.o"
+"exti_cube\exti_bsp.o"
+"exti_cube\stm32f3xx_hal_tim.o"
+"exti_cube\stm32f3xx_hal_tim_ex.o"
+"exti_cube\stm32f3xx_hal.o"
+"exti_cube\stm32f3xx_hal_rcc.o"
+"exti_cube\stm32f3xx_hal_rcc_ex.o"
+"exti_cube\stm32f3xx_hal_gpio.o"
+"exti_cube\stm32f3xx_hal_dma.o"
+"exti_cube\stm32f3xx_hal_cortex.o"
+"exti_cube\stm32f3xx_hal_pwr.o"
+"exti_cube\stm32f3xx_hal_pwr_ex.o"
+"exti_cube\stm32f3xx_hal_flash.o"
+"exti_cube\stm32f3xx_hal_flash_ex.o"
+"exti_cube\stm32f3xx_hal_i2c.o"
+"exti_cube\stm32f3xx_hal_i2c_ex.o"
+"exti_cube\stm32f3xx_hal_exti.o"
+"exti_cube\system_stm32f3xx.o"
+--strict --scatter "EXTI_CUBE\EXTI_CUBE.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "EXTI_CUBE.map" -o EXTI_CUBE\EXTI_CUBE.axf

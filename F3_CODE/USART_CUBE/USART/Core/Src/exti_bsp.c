@@ -1,0 +1,32 @@
+#include "exti_bsp.h"
+
+void KEY_EXTI_Config(void)
+{
+	GPIO_InitTypeDef KEY_GPIO_Init;
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	KEY_GPIO_Init.Mode = GPIO_MODE_IT_RISING;
+	KEY_GPIO_Init.Pin = KEY_GPIO_PIN;
+	KEY_GPIO_Init.Pull = GPIO_NOPULL;
+	KEY_GPIO_Init.Speed = GPIO_SPEED_FREQ_HIGH;
+	HAL_GPIO_Init(KEY_GPIO_PORT, &KEY_GPIO_Init);
+
+	HAL_NVIC_SetPriorityGrouping(KEY_EXTI_NVIC_PRIORITYGROUP);
+	HAL_NVIC_SetPriority(KEY_EXTI_IRQn, KEY_EXTI_PreemptPriority, KEY_EXTI_SubPriority);
+
+	HAL_NVIC_EnableIRQ(KEY_EXTI_IRQn);
+}
+
+void KEY_EXTI_Callback(void)
+{
+	LED_LD3_TOGGLE;
+	LED_LD4_TOGGLE;
+	LED_LD5_TOGGLE;
+	LED_LD6_TOGGLE;
+	LED_LD7_TOGGLE;
+	LED_LD8_TOGGLE;
+	LED_LD9_TOGGLE;
+	LED_LD10_TOGGLE;
+}
+
+
